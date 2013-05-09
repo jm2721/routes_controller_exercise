@@ -197,18 +197,17 @@ There is a lot of information in a tiny package. When things go wrong in your ap
 Visit this url: [localhost:3000/users](http://localhost:3000/users) and then find the log entry. Then open up the readme.md you copied onto your local machine and fill out this information:
 
 
-HTTP verb used in this request:
-URL:
-Controller Name:
-Controller Action:
-View File Name:
-Layout File Name:
-Response code of the request:
+HTTP verb used in this request: GET
+URL: localhost:3000/users
+Controller Name: UsersController
+Controller Action: index
+View File Name: users/index.html.erb
+Layout File Name: application.html.erb
+Response code of the request: 200
 
-You should also notice a new line or two that we didn't see before, what is it (copy and paste, hint: after User Load) ?
+You should also notice a new line or two that we didn't see before, what is it (copy and paste, hint: after User Load) ? SELECT "users".* FROM "users"
 
-Why do you think this line is there?
-
+Why do you think this line is there? That line is the sql query. It is saying to select all the users from the users table. The reason it is there is because in the page we want to show all users.
 
 
 Save and commit your answers.
