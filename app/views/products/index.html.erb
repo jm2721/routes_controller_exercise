@@ -1,6 +1,6 @@
 
 <% lots_of_products = Product.includes(:user).all %><br>
-<%= link_to "Create new product", 'products/new' %>
+<%= link_to "Create new product", products_new_path %>
 
 <p> Find a product by name: <p>
 <form method='get' action='/products' >
