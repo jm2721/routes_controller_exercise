@@ -1,3 +1,25 @@
+
+<% lots_of_products = Product.includes(:user).all %>
+<p> All the products: </p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Sold by (owned by)</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% lots_of_products.each do |prod| %>
+  <tr>
+    <td><%= prod.name %></td>
+    <td><%= prod.price %></td>
+    <td><%= prod.user.name %></td>
+  </tr>
+<% end %>
+</table>
+
 <% first_product = Product.first %>
 
 <p> 
@@ -17,13 +39,11 @@
 
 
 
-<h1> Testing that the routes work </h1>
+
+
 <p>
   Find me in <%= Rails.root.join("app", "views", "products", __FILE__ ) %>
 </p>
-
-
-
 
 <p> Oh hey want to know how many products there are? COUNT THEM. <br>
     Just kidding. There are 

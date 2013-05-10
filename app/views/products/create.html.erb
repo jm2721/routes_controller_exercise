@@ -1,0 +1,14 @@
+<h2> Create view </h2>
+
+<%= params.inspect %>
+<%= prod = Product.new(params[:product]) %>
+
+<% if prod.save %>
+  <p> Your product was successfully created and added to database </p>
+  <p> Product is <%= prod.inspect %> </p>
+<% else %>
+  <h2> Ah damn your product was not saved </h2>
+  <p> Error msg: </p>
+  <%= prod.errors.full_messages %>
+  <p> Plz fixit </p>
+<% end %>
