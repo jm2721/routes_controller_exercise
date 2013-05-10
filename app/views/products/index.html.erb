@@ -1,5 +1,32 @@
-<h2> I AMA View </h2>
+<% first_product = Product.first %>
+
+<p> 
+  The first product on the list is <%= first_product.name %> and it is priced at <%= first_product.price %> dollars 
+</p>
+
+
+<p> 
+  Owner of the first product is <%= first_product.user.name %>
+</p>
+
+<p> 
+  Cheap product is
+  <% cheap = Product.where('price < 5').first %>
+  <%= cheap.name %> which costs <%= cheap.price %> dolla
+</p>
+
+
+
 <h1> Testing that the routes work </h1>
 <p>
   Find me in <%= Rails.root.join("app", "views", "products", __FILE__ ) %>
+</p>
+
+
+
+
+<p> Oh hey want to know how many products there are? COUNT THEM. <br>
+    Just kidding. There are 
+    <% pcount = Product.count %>
+    <%= pcount %>
 </p>
