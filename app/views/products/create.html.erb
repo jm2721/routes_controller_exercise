@@ -6,9 +6,11 @@
 <% if prod.save %>
   <p> Your product was successfully created and added to database </p>
   <p> Product is <%= prod.inspect %> </p>
+  <%= link_to "Back to products", products_path %>
 <% else %>
   <h2> Ah damn your product was not saved </h2>
   <p> Error msg: </p>
   <%= prod.errors.full_messages %>
   <p> Plz fixit </p>
+  <p> Or just give up and go back to <%= link_to "products page", products_path %> <p> 
 <% end %>
